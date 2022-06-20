@@ -3,6 +3,8 @@
 Conteúdo na plataforma da DIO para introdução ao uso __*React Native*__.
 
 ## Criação App para divulgação do Git Hub
+<img src="https://user-images.githubusercontent.com/89210954/174637808-57b2e098-3b43-4dc1-9a03-9fdc20c8f47d.png" width="400" height="400" />
+
 Os tópicos foram:
 - Conhecendo o _React Native_
 - Documentação:
@@ -39,4 +41,5 @@ Os tópicos foram:
 ~~~
 
 > _Digital Innovation One_ : [dio.me](https://www.dio.me/)
+> 
 > _React Native_ : [reactnative.dev](https://reactnative.dev/)
