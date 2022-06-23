@@ -16,6 +16,25 @@ const colorFontGitHub = '#8B949E';
 const colorFontGitHub2 = '#6E7681';
 const urlToGithub = 'https://github.com/ablemosjr';
 
+const dayoff = '#30363d'; // Day off 0
+const colorHistory = '#006d32'; // Verde claro 1
+const colorActivy = '#39d353'; // Verde escuro 2
+const historic = [
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 2, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 2, 2, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 2, 0, 0],
+  [0, 0, 0, 0, 0, 2, 0, 0, 2, 2, 0, 0, 0, 0, 2, 0, 0],
+  [0, 0, 0, 0, 2, 0, 0, 0, 2, 2, 2, 0, 0, 0, 0, 2, 0],
+  [0, 0, 0, 0, 2, 0, 0, 0, 2, 2, 2, 0, 0, 0, 2, 2, 0],
+  [0, 0, 0, 0, 0, 0, 2, 0, 0, 2, 2, 0, 0, 2, 2, 0, 0],
+  [0, 0, 0, 0, 0, 2, 2, 0, 0, 2, 2, 2, 0, 2, 0, 0, 0],
+  [0, 0, 0, 0, 2, 2, 0, 0, 2, 2, 2, 2, 2, 2, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+];
+
 export default function App() {
   const handlePressGoToGithub = async () => {
     //console.log('Verificando link.');
@@ -55,6 +74,19 @@ export default function App() {
             style={[style.defaultText, style.description]}>
               Dev Front-end / Node.js / React Native
           </Text>
+          <View style={style.historicContainer}>{
+            historic.map(linha =>
+              linha.map(coluna => {
+                if(coluna === 2) {
+                  return <View style={[style.square ,style.activy]}/>;
+                } else if (coluna === 1) {
+                  return <View style={[style.square, style.history]}/>;
+                } else {
+                  return <View style={style.square}/>;
+                }
+              }),
+            )}
+          </View>
           <Pressable onPress={handlePressGoToGithub}>
             <View style={style.button}>
               <Text style={[style.defaultText, style.TextButton]}>
@@ -87,9 +119,7 @@ const style = StyleSheet.create({
     borderWidth: 1,
   },
 
-  defaultText: {
-    color: details,
-  },
+  defaultText: { color: details, },
 
   name: {
     fontSize: 22,
@@ -120,4 +150,22 @@ const style = StyleSheet.create({
     fontWeight: 'bold',
     color: 'white',
   },
+
+  historicContainer: {
+    width: '60%',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginTop: 20,
+  },
+
+  square: {
+    backgroundColor: dayoff,
+    width: 10,
+    height: 10,
+    borderRadius: 2,
+    margin: 1,
+  },
+
+  history: { backgroundColor: colorHistory, },
+  activy: { backgroundColor: colorActivy, },
 })
