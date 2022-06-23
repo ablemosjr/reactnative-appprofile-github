@@ -38,5 +38,10 @@ Os tópicos foram:
 </queries>
 ~~~
 
+> Utilizado `Expo CLI` ao invés do uso do `React Native CLI`
+
+## Desafio
+Incluir histórico de atividade _Github_ com mensagem ou um desenho.
+
 > _Digital Innovation One_ : [dio.me](https://www.dio.me/)
 > _React Native_ : [reactnative.dev](https://reactnative.dev/)
